@@ -1,0 +1,81 @@
+﻿// out: null
+/* ============= Transitions & Animations ============= */
+.mono-transition(@prop, @dur, @easFunc, @del) {
+    -moz-transition: @prop @dur @easFunc @del;
+    -o-transition: @prop @dur @easFunc @del;
+    -webkit-transition: @prop @dur @easFunc @del;
+    transition: @prop @dur @easFunc @del;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+// Layouts
+.start(@distance) {
+    left: @distance;
+}
+
+.end(@distance) {
+    right: @distance;
+}
+
+.pull-start() {
+    float: left;
+}
+
+.pull-end() {
+    float: right;
+}
+
+.txt-start() {
+    text-align: left;
+}
+
+.txt-end() {
+    text-align: right;
+}
+
+
+// Borders
+.border-start(@val) {
+    border-left: @val;
+}
+
+.border-end(@val) {
+    border-right: @val;
+}
+
+.border-radius-all(@top-start, @top-end, @bottom-end, @bottom-start) {
+    border-radius: @top-start @top-end @bottom-end @bottom-start;
+}
+
+// Paddings & Margins
+.padd-start(@val) {
+    padding-left: @val;
+}
+
+.padd-end(@val) {
+    padding-right: @val;
+}
+
+.mr-start(@val) {
+    margin-left: @val;
+}
+
+.mr-end(@val) {
+    margin-right: @val;
+}
+
+.padd-all(@top, @end, @bottom,@start) {
+    padding: @top @end @bottom @start;
+}
+
+.mr-all(@top, @end, @bottom,@start) {
+    margin: @top @end @bottom @start;
+}
+
+
+.load-bootstrap() {
+    // load bootstrap before our styles
+    @import "vendors/bootstrap/bootstrap.less";
+}

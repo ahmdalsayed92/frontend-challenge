@@ -1,0 +1,18 @@
+<section class="side-bar">
+    <div class="users-wrapper">
+        <ul class="users-list">
+            <li class="users-list-item" ng-repeat="user in users" ng-click="selectPerson(user.url)">
+                <span>{{user.login}}</span>
+            </li>
+        </ul>
+    </div>
+</section>
+<section class="user-info">
+   <h1>user details</h1>
+    <h6>{{person.name}}</h6>
+    <h6>{{person.id}}</h6>
+    <img src="{{person.avatar_url}}" alt="">
+    <h6>{{person.email}}</h6>
+    <h6>{{person.created_at}}</h6>
+</section>
+

@@ -1,0 +1,53 @@
+// variables
+@import "bootstrap-select-custom-variables";
+
+.@{prefix}-control {
+    &[role="combobox"] {
+
+        > .bootstrap-select {
+            min-width: 0;
+            &:extend(.full-width);
+
+            &.btn-group {
+                .dropdown-toggle {
+                    &when(not(@is-dd-cornered)) {
+                        border-radius: 0;
+                    }
+                }
+                /*> .btn {
+                    &:extend(.esf-control>.esf-input all, .esf-control[role="button"]>.esf-btn all, .esf-control[role="button"].transparent-btn > .esf-btn all);
+                    .padd-end(31px);
+                }*/
+                .dropdown-menu {
+                    max-width: 300px;
+
+                    &when(not(@is-dd-cornered)) {
+                        border-radius: 0;
+                    }
+
+                    li {
+                        a {
+                            padding: 0;
+
+                            span {
+                                &.text {
+                                    .padd-all(10px, 30px, 10px, 20px);
+                                    &:extend(.block, .three-dots);
+                                }
+                            }
+                        }
+
+                        &.selected {
+                            > a {
+                                &, &:hover {
+                                    background-color: @selected-item-bg-clr;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* End Custom Style For BootStrap Select */
