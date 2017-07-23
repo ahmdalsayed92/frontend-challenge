@@ -28,13 +28,13 @@ app.controller('challengeAppCtrl', function ($http, $scope) {
     ////////////************************************************////////////
 
 
-    
+
     $scope.person = null;
     $scope.limit = 10;
 
     // function to get selected user data
     $scope.selectPerson = function (url, index) {
-        
+
         //API to get selected user data
 
         $http({
@@ -44,7 +44,7 @@ app.controller('challengeAppCtrl', function ($http, $scope) {
             console.log("user success!");
             console.log(url);
             $scope.person = response.data;
-            
+
 
         }, function errorCallback(response) {
             console.log("FAILED!");
@@ -54,10 +54,10 @@ app.controller('challengeAppCtrl', function ($http, $scope) {
 
 
     };
-    
+
     $scope.selectedPerson = $scope.person;
 
-    
+
     ////////////************************************************////////////
 
 
@@ -72,26 +72,40 @@ app.config(function($routeProvider) {
         .when("/", {
         templateUrl : "../../views/home.html",
         controller : "challengeAppCtrl",
-        activetab : "home"
+        activetab : "home",
+        title : 'Home'
     })
         .when("/home", {
         templateUrl : "../../views/home.html",
         controller : "challengeAppCtrl",
-        activetab : "home"
+        activetab : "home",
+        title : 'Home'
     })
         .when("/about", {
         templateUrl : "../../views/about.html",
         controller : "challengeAppCtrl",
-        activetab : "about"
+        activetab : "about",
+        title : 'About'
+
     })
         .when("/users", {
         templateUrl : "../../views/users.html",
         controller : "challengeAppCtrl",
-        activetab : "users"
+        activetab : "users",
+        title : 'Users'
+
+
+
+
     }).otherwise({ redirectTo: '/home', activetab: "home"});;
 
 }).run(function ($rootScope, $route) {
     $rootScope.$route = $route;
+    $rootScope.$on("$routeChangeSuccess", function(currentRoute, previousRoute){
+        //Change page title, based on Route information
+        $rootScope.title = $route.current.title;
+    });
+
 });;
 
 
