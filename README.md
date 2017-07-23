@@ -1,4 +1,5 @@
-## frontend instabug challenge app configuration: 
+## Frontend Instabug Challenge 
+## app configuration: 
 - i used node.js to start a local server this link
  (http://jasonwatmore.com/post/2016/06/22/nodejs-setup-simple-http-server-local-web-server) 
  shows you how to start a local server. 
@@ -9,4 +10,4 @@
 - the LESS files in styles folder is not the full complete framwork i used only what i need but it's scalable 
     which means i can include other components easily. 
 
-    
+- github link : https://github.com/zetkazoot/frontend-instabug-challenge

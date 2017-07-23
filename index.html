@@ -4,8 +4,10 @@
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
-       
+
         <title ng-bind="$root.title + ' | Frontend Challenge'"></title>
+        
+        <!-- favicon -->
         <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 
         <!-- styles -->
@@ -16,12 +18,10 @@
         <script type="text/javascript" src="scripts/vendors/angular-ui-router.min.js"></script>
         <script type="text/javascript" src="scripts/app/app.js"></script>
 
-
-
-
     </head>
     <body ng-controller="challengeAppCtrl">
-
+       
+        <!--top nav-->
         <nav class="nav-menu fixed full-width">
             <div class="table-layout full-width table-fixed">
                 <div class="table-row-layout">
@@ -29,21 +29,23 @@
                         <a href="#!home" class="logo txt_primary-clr">FC</a>
                     </div>
                     <div class="table-cell-layout txt-end">
-                       <ul class="nav-menu-wrapper">
-                           <li class="nav-menu-item">
-                               <a href="#home" ng-class="{active: $route.current.activetab == 'home'}">home</a>
-                           </li>
-                           <li class="nav-menu-item">
-                               <a href="#!about" ng-class="{active: $route.current.activetab == 'about'}">about</a>
-                           </li>
-                           <li class="nav-menu-item">
-                               <a href="#!users" ng-class="{active: $route.current.activetab == 'users'}">users</a>
-                           </li>
-                       </ul>
+                        <ul class="nav-menu-wrapper">
+                            <li class="nav-menu-item">
+                                <a href="#home" ng-class="{active: $route.current.activetab == 'home'}">home</a>
+                            </li>
+                            <li class="nav-menu-item">
+                                <a href="#!about" ng-class="{active: $route.current.activetab == 'about'}">about</a>
+                            </li>
+                            <li class="nav-menu-item">
+                                <a href="#!users" ng-class="{active: $route.current.activetab == 'users'}">users</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </nav>
+        
+        <!--app views-->
         <div ng-view></div>
     </body>
 </html>

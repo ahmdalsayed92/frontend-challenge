@@ -64,58 +64,7 @@
     margin: @top @end @bottom @start;
 }
 
-
-//.button-structure(@base-clr: @default-clr, @hov-txt_clr: @base-clr, @active-txt_clr: #fff, @def-bg_clr: #fff, @def-txt_clr: @grey_clr-1, @hov-bg_clr: #fff, @is-transp: false) {
-//    > .@{prefix}-btn, > .fw-btn {
-//        background-color: @def-bg_clr;
-//        color: @def-txt_clr;
-//        border-color: @base-clr;
-//
-//        &when(@is-transp) {
-//            border: @border-width solid @border-color;
-//        }
-//
-//        &:hover, &.hovered {
-//            background-color: @hov-bg_clr;
-//
-//            &, ~ .@{prefix}-control-icon {
-//                color: @hov-txt_clr;
-//            }
-//        }
-//
-//        &:active, &.active {
-//            background-color: darken(@base-clr, 5%);
-//            box-shadow: inset 0 3px 3px -3px rgba(0,0,0,.4);
-//
-//            &, ~ .@{prefix}-control-icon {
-//                color: @active-txt_clr;
-//            }
-//        }
-//
-//        &when(@is-transp=true) {
-//            &:active, &.active {
-//                background-color: darken(@hov-bg_clr, 5%);
-//            }
-//        }
-//
-//
-//        &[disabled], &.disabled {
-//            &:hover {
-//                background-color: @def-bg_clr;
-//
-//                &, ~ .@{prefix}-control-icon {
-//                    color: @def-txt_clr;
-//                }
-//            }
-//        }
-//    }
-//
-//    > .@{prefix}-control-icon {
-//        color: @def-txt_clr;
-//        /*border-color: @base-clr;*/
-//    }
-//}
-
+// button maker
 .btn-maker(@background-clr: @primary-clr, @background-hvr: @darken-primary-clr, @txt-clr: @white){
 
     background-color: @background-clr;
@@ -138,6 +87,7 @@
 
 }
 
+// plugg in your fonts
 .get-font (){
     @font-face {
         font-family: '@{custom-font}';
