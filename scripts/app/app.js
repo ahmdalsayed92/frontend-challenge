@@ -12,7 +12,7 @@ var app = angular.module('challengeApp', ['ngRoute']);
 
 app.controller('challengeAppCtrl', function ($http, $scope) {
 
-    //API
+    //API to get all users
 
     $http({
         method: 'GET',
@@ -25,15 +25,16 @@ app.controller('challengeAppCtrl', function ($http, $scope) {
         console.log("FAILED!");
     });
 
+    ////////////************************************************////////////
 
 
-    // users data
-
-    $scope.selectedIndex = null;
-    $scope.selectedPerson = null;
+    
     $scope.person = null;
-    $scope.selectPerson = function (url) {
+    $scope.limit = 10;
 
+    // function to get selected user data
+    $scope.selectPerson = function (url, index) {
+        
         //API to get selected user data
 
         $http({
@@ -43,18 +44,21 @@ app.controller('challengeAppCtrl', function ($http, $scope) {
             console.log("user success!");
             console.log(url);
             $scope.person = response.data;
-            console.log($scope.person);
+            
 
         }, function errorCallback(response) {
             console.log("FAILED!");
         });
 
 
-//        $scope.selectedPerson = $scope.person;
-
 
 
     };
+    
+    $scope.selectedPerson = $scope.person;
+
+    
+    ////////////************************************************////////////
 
 
 
@@ -67,21 +71,28 @@ app.config(function($routeProvider) {
     $routeProvider
         .when("/", {
         templateUrl : "../../views/home.html",
-        controller : "challengeAppCtrl"
+        controller : "challengeAppCtrl",
+        activetab : "home"
     })
         .when("/home", {
         templateUrl : "../../views/home.html",
-        controller : "challengeAppCtrl"
+        controller : "challengeAppCtrl",
+        activetab : "home"
     })
         .when("/about", {
         templateUrl : "../../views/about.html",
-        controller : "challengeAppCtrl"
+        controller : "challengeAppCtrl",
+        activetab : "about"
     })
         .when("/users", {
         templateUrl : "../../views/users.html",
-        controller : "challengeAppCtrl"
-    });
-});
+        controller : "challengeAppCtrl",
+        activetab : "users"
+    }).otherwise({ redirectTo: '/home', activetab: "home"});;
+
+}).run(function ($rootScope, $route) {
+    $rootScope.$route = $route;
+});;
 
 
 

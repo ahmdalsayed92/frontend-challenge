@@ -1,14 +1,4 @@
 ﻿// out: null
-/* ============= Transitions & Animations ============= */
-.mono-transition(@prop, @dur, @easFunc, @del) {
-    -moz-transition: @prop @dur @easFunc @del;
-    -o-transition: @prop @dur @easFunc @del;
-    -webkit-transition: @prop @dur @easFunc @del;
-    transition: @prop @dur @easFunc @del;
-    -moz-backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
 
 // Layouts
 .start(@distance) {
@@ -74,6 +64,95 @@
     margin: @top @end @bottom @start;
 }
 
+
+//.button-structure(@base-clr: @default-clr, @hov-txt_clr: @base-clr, @active-txt_clr: #fff, @def-bg_clr: #fff, @def-txt_clr: @grey_clr-1, @hov-bg_clr: #fff, @is-transp: false) {
+//    > .@{prefix}-btn, > .fw-btn {
+//        background-color: @def-bg_clr;
+//        color: @def-txt_clr;
+//        border-color: @base-clr;
+//
+//        &when(@is-transp) {
+//            border: @border-width solid @border-color;
+//        }
+//
+//        &:hover, &.hovered {
+//            background-color: @hov-bg_clr;
+//
+//            &, ~ .@{prefix}-control-icon {
+//                color: @hov-txt_clr;
+//            }
+//        }
+//
+//        &:active, &.active {
+//            background-color: darken(@base-clr, 5%);
+//            box-shadow: inset 0 3px 3px -3px rgba(0,0,0,.4);
+//
+//            &, ~ .@{prefix}-control-icon {
+//                color: @active-txt_clr;
+//            }
+//        }
+//
+//        &when(@is-transp=true) {
+//            &:active, &.active {
+//                background-color: darken(@hov-bg_clr, 5%);
+//            }
+//        }
+//
+//
+//        &[disabled], &.disabled {
+//            &:hover {
+//                background-color: @def-bg_clr;
+//
+//                &, ~ .@{prefix}-control-icon {
+//                    color: @def-txt_clr;
+//                }
+//            }
+//        }
+//    }
+//
+//    > .@{prefix}-control-icon {
+//        color: @def-txt_clr;
+//        /*border-color: @base-clr;*/
+//    }
+//}
+
+.btn-maker(@background-clr: @primary-clr, @background-hvr: @darken-primary-clr, @txt-clr: @white){
+
+    background-color: @background-clr;
+    color: @txt-clr;
+    border-radius: 20px; 
+    padding: 10px 40px;
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.58);
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: @custom-font2;
+    transition: all .3s;
+    user-select: none;
+    &:extend(.bold);
+
+    &:hover {
+        background-color: @background-hvr;
+        text-decoration: none;
+    }
+
+}
+
+.get-font (){
+    @font-face {
+        font-family: '@{custom-font}';
+        src: url('@{relative-path}fonts/CreteRound-Regular.ttf');
+        font-weight: normal;
+        font-style: normal;
+    }
+    
+    @font-face {
+        font-family: '@{custom-font2}';
+        src: url('@{relative-path}fonts/Ubuntu-Light.ttf');
+        font-weight: normal;
+        font-style: normal;
+    }
+}
 
 .load-bootstrap() {
     // load bootstrap before our styles

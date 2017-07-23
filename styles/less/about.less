@@ -1,0 +1,29 @@
+// out: null
+.about {
+    .headline {
+        font-family: @custom-font;
+        font-size: 34px;
+        margin-top: 80px;
+        &:extend(.capitalize);
+
+        p {
+            font-size: 24px;
+        }
+    }
+
+    .made-with{
+        h2 {
+            font-size: 25px;
+            font-family: @custom-font2;
+            text-align: center;
+            margin-bottom: 40px;
+            margin-top: 40px;
+            &:extend(.capitalize);
+        }
+        img {
+            width: 200px;
+            margin: auto;
+            display: block;
+        }
+    }
+}

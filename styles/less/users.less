@@ -1,0 +1,117 @@
+// out: null
+
+
+.users {
+
+    .users-list-cell {
+        width: 20%;
+        .side-bar {
+            width: 240px;
+            height: 100%;
+            overflow: auto;
+            background-color: @default-clr;
+            height: 96vh;
+            padding-top: 4vh;
+            box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.4);
+
+            .users-wrapper{
+                .users-list {
+                    padding: 0;
+                    margin: 0;
+                    list-style: none;
+                    padding-top: 50px;
+                    padding-bottom: 10px;
+                    box-sizing: border-box;
+                    &:extend(.in-block, .full-width);
+                    .round-img {
+                        @dim: 50px;
+                        border-radius: 50%;
+                        width: @dim;
+                        height: @dim;
+                        overflow: hidden;
+                        &:extend(.in-block);
+
+                        .user-list-item-img{
+                            max-width: 100%;
+                        }
+                    }
+                    .users-list-item {
+                        &:extend(.full-width);
+
+                        span {
+                            color: @white;
+                            box-sizing: content-box;
+                            font-family: @custom-font2;
+                            line-height: 3;
+                            font-size: 16px;
+                            cursor: pointer;
+                            transition: all .3s;
+                            .padd-start(10px);
+                            &:extend(.capitalize, .block);
+
+                            &:hover,&:active,&:focus,&:visited,&.active {
+                                text-decoration: none;
+                                background-color: @primary-clr;
+                            }
+                            
+                        }
+
+                    }
+                }
+            }
+
+
+
+        }
+    }
+
+    .user-details-cell {
+        width: 80%;
+
+        .user-info {
+            margin-top: 70px;
+
+            .user-img-rounded {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                overflow: hidden; 
+                margin: auto;
+                box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.4);
+
+                img {
+                    max-width: 100%; 
+                }
+            }
+
+            .user-name {
+                font-family: @custom-font2;
+                font-size: 20px;
+                margin: 10 0px;
+
+                .user-id {
+                    .mr-end(10px);
+                    font-size: 14px;
+                    background-color: @primary-clr;
+                    color: @white;
+                    border-radius: 7px;
+                    padding: 10px;
+                }
+            }
+
+            .user-email {
+                span {
+                    .mr-end(10px);
+                    color: @primary-clr;
+                }
+            }
+            .user-date {
+                span {
+                    .mr-end(10px);
+                    color: @primary-clr;
+
+                }
+            }
+        }
+    }
+}

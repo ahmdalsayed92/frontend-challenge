@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en' ng-app="challengeApp">
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+       
+        <title>Frontend Challenge</title>
+
+        <!-- styles -->
+        <link href="styles/css/app.css" rel="stylesheet" />
+
+        <!--scripts-->
+        <script type="text/javascript" src="scripts/vendors/angular.min.js"></script>
+        <script type="text/javascript" src="scripts/vendors/angular-ui-router.min.js"></script>
+        <script type="text/javascript" src="scripts/app/app.js"></script>
+
+
+
+
+    </head>
+    <body ng-controller="challengeAppCtrl">
+
+        <nav class="nav-menu fixed full-width">
+            <div class="table-layout full-width table-fixed">
+                <div class="table-row-layout">
+                    <div class="table-cell-layout txt-end">
+                        <a href="#!home" class="logo txt_primary-clr">FC</a>
+                    </div>
+                    <div class="table-cell-layout txt-end">
+                       <ul class="nav-menu-wrapper">
+                           <li class="nav-menu-item">
+                               <a href="#home" ng-class="{active: $route.current.activetab == 'home'}">home</a>
+                           </li>
+                           <li class="nav-menu-item">
+                               <a href="#!about" ng-class="{active: $route.current.activetab == 'about'}">about</a>
+                           </li>
+                           <li class="nav-menu-item">
+                               <a href="#!users" ng-class="{active: $route.current.activetab == 'users'}">users</a>
+                           </li>
+                       </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div ng-view></div>
+    </body>
+</html>

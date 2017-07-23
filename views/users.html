@@ -1,18 +1,76 @@
-<section class="side-bar">
-    <div class="users-wrapper">
-        <ul class="users-list">
-            <li class="users-list-item" ng-repeat="user in users" ng-click="selectPerson(user.url)">
-                <span>{{user.login}}</span>
-            </li>
-        </ul>
-    </div>
+<!--
+<section class="side-bar fixed">
+<div class="users-wrapper mr-b20">
+<ul class="users-list">
+<li class="users-list-item" ng-repeat="user in users|limitTo: limit as results" ng-click="selectPerson(user.url)">
+<span>{{user.login}}</span>
+
+</li>
+</ul>
+<div class="txt-center">
+<a class="btn-primary mr-b20 in-block" ng-click="limit = limit +10" ng-hide="results.length === users.length">load more</a>
+</div>
+</div>
+
 </section>
 <section class="user-info">
-   <h1>user details</h1>
-    <h6>{{person.name}}</h6>
-    <h6>{{person.id}}</h6>
-    <img src="{{person.avatar_url}}" alt="">
-    <h6>{{person.email}}</h6>
-    <h6>{{person.created_at}}</h6>
+<h1>user details</h1>
+<h6>{{person.name}}</h6>
+<h6>{{person.id}}</h6>
+<img src="{{person.avatar_url}}" alt="">
+<h6>{{person.email}}</h6>
+<h6>{{person.created_at}}</h6>
 </section>
+-->
+
+
+
+<div class="users">
+    <div class="table-layout full-width">
+        <div class="table-row-layout">
+            <div class="table-cell-layout users-list-cell">
+                <div class="side-bar">
+                    <div class="users-wrapper mr-b20">
+                        <ul class="users-list">
+                            <li class="users-list-item" ng-repeat="user in users|limitTo: limit as results"
+                                ng-click="selectPerson(user.url)" ng-init="$first && selectPerson(user.url)">
+                                <span>{{user.login}}</span>
+
+                            </li>
+                        </ul>
+                        <div class="txt-center">
+                            <a class="btn-primary mr-b20 in-block" ng-click="limit = limit +10" ng-hide="results.length === users.length">load more</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="table-cell-layout middle user-details-cell">
+                <div class="user-info">
+                    <div class="user-img-rounded">
+                        <img src="{{person.avatar_url}}" alt="">
+                    </div>
+                    <div class="table-layout full-width txt-center mr-t20">
+                        <div class="table-row-layout">
+                            <div class="table-cell-layout">
+                                <h6 class="user-name"><span class="user-id">ID:{{person.id}}</span>{{person.name}}</h6>
+                            </div>
+                            <div class="table-cell-layout">
+                                <h6 class="user-email"><span>Email:</span>{{person.email}}</h6>
+                            </div>
+                            <div class="table-cell-layout">
+                                <h6 class="user-date"><span>Created at:</span>{{person.created_at}}</h6>
+                            </div>
+                        </div> 
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
 
